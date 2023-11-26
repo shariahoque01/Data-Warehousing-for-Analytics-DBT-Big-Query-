@@ -3,6 +3,8 @@
         materialized = 'table'
     )
 }}
+
+
 with complaint_type as (
 
     select
@@ -11,6 +13,6 @@ with complaint_type as (
 FROM `cis4400project-403800.projectDatasets.311_traffic_lights`
 
 )
-
-select * from complaint_type
+select row_number() over (order by Descriptor) as SKs,
+* from complaint_type
 

@@ -10,12 +10,9 @@ with
 
     )
 
-select row_number() over (order by (descriptor)) as sks, *
+select row_number() over (order by (descriptor)) as complaint_type_descriptor_SKs, *
 from
     complaint_type
+    order by complaint_type_descriptor_SKs
 
-    -- select
-    -- distinct(Complaint_Type), Descriptor, row_number() over (order by
-    -- distinct(Descriptor)) as SKs
-    -- FROM `cis4400project-403800.projectDatasets.311_traffic_lights`
-    
+
